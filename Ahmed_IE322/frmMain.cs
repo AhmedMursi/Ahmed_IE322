@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Ahmed_IE322
 {
-	public partial class Ahmed322 : Form
+	public partial class frmMain : Form
 	{
 		string username = "Ahmed";
 		string myPassword = "0000";
@@ -14,13 +14,11 @@ namespace Ahmed_IE322
 		int attempt = 1;
 		int MaxAttempts = 3;
 
-		public Ahmed322()
+		public frmMain()
 		{
 			InitializeComponent();
 		}
-		 
-
-		private void Form1_Load(object sender, EventArgs e)
+		private void frmMain_Load(object sender, EventArgs e)
 		{
 			foreach (var grp in groupBox1.Controls.OfType<GroupBox>())
 			{
@@ -31,7 +29,10 @@ namespace Ahmed_IE322
 			}
 
 			toolStripStatusLabel1.Text = "Login please...";
+
 		}
+
+
 		private void btnRadio_Click(object sender, EventArgs e)
 		{
 			frmRadio frm = new frmRadio();
@@ -63,6 +64,7 @@ namespace Ahmed_IE322
 
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
+
 			if (!loggedIn)
 			{
 
@@ -93,7 +95,7 @@ namespace Ahmed_IE322
 							MessageBox.Show("Hi " + username + ", your login successful");
 
 
-							foreach (var grp in LogBox.Controls.OfType<GroupBox>())
+							foreach (var grp in groupBox1.Controls.OfType<GroupBox>())
 							{
 								foreach (var btn in grp.Controls.OfType<Button>())
 								{
@@ -102,7 +104,7 @@ namespace Ahmed_IE322
 								}
 							}
 
-							LogBox.Text = "Logout";
+							btnLogin.Text = "Logout";
 							toolStripStatusLabel1.Text = "Hi " + username + ", you are logged in.";
 							
 							break; 
@@ -113,14 +115,14 @@ namespace Ahmed_IE322
 			}
 			else
 			{
-				LogBox.Text = "Login";
+				btnLogin.Text = "Login";
 				toolStripStatusLabel1.Text = "You are logged out.";
 				loggedIn = false;
 
 				TxtUser.Clear();
 				TxtPassword.Clear();
 
-				foreach (var grp in LogBox.Controls.OfType<GroupBox>())
+				foreach (var grp in groupBox1.Controls.OfType<GroupBox>())
 				{
 					foreach (var btn in grp.Controls.OfType<Button>())
 					{
@@ -129,6 +131,7 @@ namespace Ahmed_IE322
 				}
 			}
 		}
+
 		private void btnRandom_Click(object sender, EventArgs e)
 		{
 			{
@@ -168,16 +171,6 @@ namespace Ahmed_IE322
 			this.DialogResult = DialogResult.OK;
 		}
 
-		private void TxtPassword_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-
-		private void TextPassword_Click(object sender, EventArgs e)
-		{
-
-		}
 		private void TxtUser_Enter(object sender, EventArgs e)
 		{
 			this.TxtUser.BackColor = Color.FromName("yellow");
@@ -189,12 +182,12 @@ namespace Ahmed_IE322
 		}
 
 
-		private void TxtPassWord_Enter(object sender, EventArgs e)
+		private void TxtPassword_Enter(object sender, EventArgs e)
 		{
 			this.TxtPassword.BackColor = Color.FromName("yellow");
 		}
 
-		private void TxtPassWord_Leave(object sender, EventArgs e)
+		private void TxtPassword_Leave(object sender, EventArgs e)
 		{
 			this.TxtPassword.BackColor = Color.FromName("white");
 		}
@@ -272,7 +265,27 @@ namespace Ahmed_IE322
 			MessageBox.Show("Please try to remember your passwords");
 		}
 
-		private void LogBox_Click(object sender, EventArgs e)
+		private void grpLogin_Enter(object sender, EventArgs e)
+		{
+
+		}
+
+		private void lblUsername_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void TxtUser_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void TxtPassword_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void lblPW_Click(object sender, EventArgs e)
 		{
 
 		}

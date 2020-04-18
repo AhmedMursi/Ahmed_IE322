@@ -16,7 +16,7 @@ namespace Ahmed_IE322
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Ahmed322 a = new Ahmed322();
+			frmMain a = new frmMain();
 			Application.Run(a);
 		}
 	}

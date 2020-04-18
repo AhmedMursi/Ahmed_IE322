@@ -58,7 +58,7 @@
             // 
             // picTry3
             // 
-            this.picTry3.Location = new System.Drawing.Point(52, 95);
+            this.picTry3.Location = new System.Drawing.Point(62, 108);
             this.picTry3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picTry3.Name = "picTry3";
             this.picTry3.Size = new System.Drawing.Size(218, 180);

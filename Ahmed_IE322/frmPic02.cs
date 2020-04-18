@@ -13,13 +13,16 @@ namespace Ahmed_IE322
 {
     public partial class frmPic02 : Form
     {
-        private readonly Stream _imageStream;
-        private object graphicsObj3;
-        private object myPen;
+        System.Drawing.Graphics graphicsObj3;
+        Pen myPen = new Pen(System.Drawing.Color.Blue, 1);
+
 
         public frmPic02()
         {
             InitializeComponent();
+            picTry3.SizeMode = PictureBoxSizeMode.StretchImage;
+            graphicsObj3 = this.picTry3.CreateGraphics();
+
         }
 
         private void btnLoadImage_Click(object sender, EventArgs e)
@@ -27,7 +30,7 @@ namespace Ahmed_IE322
             try
             {
 
-                picTry3.Image = Image.FromStream(_imageStream);
+                picTry3.Image = Image.FromFile("C: Desktop\\KAU.PNG");
 
             }
             catch
@@ -36,21 +39,17 @@ namespace Ahmed_IE322
 
             }
         }
-
         private void picTry3_Click(object sender, EventArgs e)
         {
-
-
             Point coordinates = picTry3.PointToClient(Cursor.Position); 
-
-
-            graphicsObj3.DrawLine(myPen, coordinates.X - 1, coordinates.Y - 1, coordinates.X, coordinates.Y);
 
         }
 
+
+
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
